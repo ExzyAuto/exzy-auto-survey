@@ -206,7 +206,7 @@
         .question-options {
             display: grid;
             gap: var(--space-3);
-            margin-bottom: var(--space-6);
+            margin-bottom: var(--space-4);
         }
 
         .option-card {
@@ -1350,8 +1350,8 @@
         // Отправка данных на сервер
         async function sendSurveyData(data) {
             try {
-                // Отправляем на ваш сервер с ботом через HTTPS туннель
-                const response = await fetch('https://exzy-survey.loca.lt/survey', {
+                // Отправляем на ваш сервер с ботом через Cloudflare туннель
+                const response = await fetch('https://liver-scores-north-protection.trycloudflare.com/survey', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
