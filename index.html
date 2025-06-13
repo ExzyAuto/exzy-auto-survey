@@ -219,6 +219,7 @@
             position: relative;
             background: var(--white);
             -webkit-tap-highlight-color: transparent;
+            display: block;
         }
 
         .option-card:hover {
@@ -236,8 +237,14 @@
         .option-card input[type="radio"],
         .option-card input[type="checkbox"] {
             position: absolute;
-            opacity: 0;
-            pointer-events: none;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
         }
 
         .option-content {
@@ -567,6 +574,10 @@
             cursor: pointer;
             flex-shrink: 0;
             margin-top: 2px;
+            position: static;
+            opacity: 1;
+            clip: auto;
+            overflow: visible;
         }
 
         .checkbox-group label {
@@ -759,628 +770,6 @@
                     <label for="newsletter">Хочу получать новости о запуске приложения и специальные предложения</label>
                 </div>
             </div>
-
-            <!-- Вопрос 16: Программы лояльности -->
-            <div class="question-section" data-question="16">
-                <h2 class="question-title">
-                    <span class="question-number">16</span>
-                    <span>Какой тип программы лояльности вам интереснее?</span>
-                </h2>
-                <div class="question-options">
-                    <label class="option-card">
-                        <input type="radio" name="loyalty_type" value="cashback">
-                        <div class="option-content">
-                            <div class="option-icon">💳</div>
-                            <div class="option-text">
-                                <div class="option-title">Кэшбэк</div>
-                                <div class="option-description">Возврат % от покупки на счет</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="loyalty_type" value="points">
-                        <div class="option-content">
-                            <div class="option-icon">🏆</div>
-                            <div class="option-text">
-                                <div class="option-title">Накопительные баллы</div>
-                                <div class="option-description">Баллы на будущие покупки</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="loyalty_type" value="discounts">
-                        <div class="option-content">
-                            <div class="option-icon">🏷️</div>
-                            <div class="option-text">
-                                <div class="option-title">Прогрессивные скидки</div>
-                                <div class="option-description">Чем больше покупаешь, тем больше скидка</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="loyalty_type" value="not_interested">
-                        <div class="option-content">
-                            <div class="option-icon">🤷</div>
-                            <div class="option-text">
-                                <div class="option-title">Не интересно</div>
-                                <div class="option-description">Главное - низкая цена сразу</div>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Вопрос 17: Мобильное приложение -->
-            <div class="question-section" data-question="17">
-                <h2 class="question-title">
-                    <span class="question-number">17</span>
-                    <span>Какие функции должны быть в идеальном приложении?</span>
-                </h2>
-                <div class="question-options">
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="vin_scanner">
-                        <div class="option-content">
-                            <div class="option-icon">📷</div>
-                            <div class="option-text">
-                                <div class="option-title">Сканер VIN-кода</div>
-                                <div class="option-description">Наводим камеру и получаем запчасти</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="ai_consultation">
-                        <div class="option-content">
-                            <div class="option-icon">🤖</div>
-                            <div class="option-text">
-                                <div class="option-title">ИИ-консультант</div>
-                                <div class="option-description">Умный помощник 24/7</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="maintenance_reminder">
-                        <div class="option-content">
-                            <div class="option-icon">🔔</div>
-                            <div class="option-text">
-                                <div class="option-title">Напоминания о ТО</div>
-                                <div class="option-description">Когда менять масло, фильтры</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="price_comparison">
-                        <div class="option-content">
-                            <div class="option-icon">📊</div>
-                            <div class="option-text">
-                                <div class="option-title">Сравнение цен</div>
-                                <div class="option-description">Все поставщики в одном месте</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="photo_search">
-                        <div class="option-content">
-                            <div class="option-icon">🔍</div>
-                            <div class="option-text">
-                                <div class="option-title">Поиск по фото детали</div>
-                                <div class="option-description">Сфотографировал - нашел</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="app_features" value="one_click_reorder">
-                        <div class="option-content">
-                            <div class="option-icon">🔄</div>
-                            <div class="option-text">
-                                <div class="option-title">Повторный заказ в 1 клик</div>
-                                <div class="option-description">История и быстрый перезаказ</div>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Вопрос 18: Готовность стать бета-тестером -->
-            <div class="question-section" data-question="18">
-                <h2 class="question-title">
-                    <span class="question-number">18</span>
-                    <span>Хотите первыми протестировать наше приложение?</span>
-                </h2>
-                <div class="question-options">
-                    <label class="option-card">
-                        <input type="radio" name="beta_tester" value="yes_active">
-                        <div class="option-content">
-                            <div class="option-icon">🚀</div>
-                            <div class="option-text">
-                                <div class="option-title">Да, буду активным тестером</div>
-                                <div class="option-description">Готов давать обратную связь</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="beta_tester" value="yes_try">
-                        <div class="option-content">
-                            <div class="option-icon">👍</div>
-                            <div class="option-text">
-                                <div class="option-title">Да, попробую</div>
-                                <div class="option-description">Установлю и посмотрю</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="beta_tester" value="wait_release">
-                        <div class="option-content">
-                            <div class="option-icon">⏰</div>
-                            <div class="option-text">
-                                <div class="option-title">Подожду релиза</div>
-                                <div class="option-description">Предпочитаю готовый продукт</div>
-                            </div>
-                        </div>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="beta_tester" value="not_interested">
-                        <div class="option-content">
-                            <div class="option-icon">📵</div>
-                            <div class="option-text">
-                                <div class="option-title">Не интересно</div>
-                                <div class="option-description">Не планирую использовать</div>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Вопрос 19: Обратная связь -->
-            <div class="question-section" data-question="19">
-                <h2 class="question-title">
-                    <span class="question-number">19</span>
-                    <span>Ваши пожелания и предложения</span>
-                </h2>
-                <textarea class="text-input" name="feedback" placeholder="Расскажите нам:
-• Что должно быть в идеальном сервисе автозапчастей?
-• Какие проблемы нужно решить в первую очередь?
-• Что вам нравится/не нравится в EXZY Auto (если пользовались)?
-• Какие автомобильные форумы или группы вы читаете?
-• Любые другие идеи и предложения..."></textarea>
-            </div>
-
-            <!-- Результаты -->
-            <div class="results-section">
-                <div class="success-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <h2 class="results-title">Спасибо за участие в опросе!</h2>
-                <p class="results-text">
-                    Ваше мнение очень важно для нас. Мы обязательно учтем все пожелания при создании нового сервиса и мобильного приложения EXZY Auto.
-                </p>
-                
-                <div class="discount-code">
-                    <div class="discount-title">Ваша персональная скидка</div>
-                    <div class="discount-value">SURVEY15</div>
-                    <div class="discount-description">
-                        Скидка 15% на первый заказ в EXZY Auto
-                    </div>
-                </div>
-
-                <button class="btn btn-primary" onclick="copyDiscountCode()">
-                    <i class="fas fa-copy"></i>
-                    Скопировать промокод
-                </button>
-
-                <div class="social-share">
-                    <button class="share-btn share-vk" onclick="shareToVK()">
-                        <i class="fab fa-vk"></i>
-                    </button>
-                    <button class="share-btn share-telegram" onclick="shareToTelegram()">
-                        <i class="fab fa-telegram"></i>
-                    </button>
-                    <button class="share-btn share-whatsapp" onclick="shareToWhatsApp()">
-                        <i class="fab fa-whatsapp"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="navigation-buttons">
-                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;">
-                    <i class="fas fa-arrow-left"></i>
-                    Назад
-                </button>
-                <div></div>
-                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>
-                    Далее
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
-
-        <div class="contact-info">
-            <div class="contact-title">Остались вопросы? Свяжитесь с нами!</div>
-            <div class="contact-details">
-                <a href="tel:+79937490916" class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    +7 (993) 749-09-16
-                </a>
-                <a href="https://vk.com/exzy_35" class="contact-item" target="_blank">
-                    <i class="fab fa-vk"></i>
-                    vk.com/exzy_35
-                </a>
-                <a href="mailto:info@exzyauto.ru" class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    info@exzyauto.ru
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let currentQuestion = 1;
-        const totalQuestions = 19;
-        let responses = {};
-        let skipServiceRating = false;
-
-        // Обновление прогресса
-        function updateProgress() {
-            const progress = (currentQuestion / totalQuestions) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-            document.getElementById('currentQuestionNumber').textContent = currentQuestion;
-            document.getElementById('totalQuestionsNumber').textContent = totalQuestions;
-            document.getElementById('progressPercentage').textContent = Math.round(progress) + '%';
-        }
-
-        // Автоскролл к началу вопроса на мобильных
-        function scrollToTop() {
-            if (window.innerWidth <= 768) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-
-        // Переход к следующему вопросу
-        function nextQuestion() {
-            if (currentQuestion < totalQuestions) {
-                saveCurrentResponse();
-                
-                // Проверяем, нужно ли пропустить вопрос об оценке сервиса
-                if (currentQuestion === 2) {
-                    const exzyExperience = responses.exzy_experience;
-                    if (exzyExperience === 'heard_about' || exzyExperience === 'first_time') {
-                        skipServiceRating = true;
-                    }
-                }
-                
-                // Скрываем текущий вопрос
-                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
-                
-                currentQuestion++;
-                
-                // Пропускаем вопрос об оценке сервиса если нужно
-                if (currentQuestion === 3 && skipServiceRating) {
-                    currentQuestion++;
-                }
-                
-                // Показываем следующий вопрос
-                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.add('active');
-                
-                updateProgress();
-                updateButtons();
-                scrollToTop();
-                
-                // Сбрасываем состояние кнопки "Далее"
-                checkCurrentQuestionComplete();
-            } else {
-                submitSurvey();
-            }
-        }
-
-        // Переход к предыдущему вопросу
-        function previousQuestion() {
-            if (currentQuestion > 1) {
-                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
-                
-                currentQuestion--;
-                
-                // Пропускаем вопрос об оценке сервиса при возврате назад
-                if (currentQuestion === 3 && skipServiceRating) {
-                    currentQuestion--;
-                }
-                
-                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.add('active');
-                
-                updateProgress();
-                updateButtons();
-                scrollToTop();
-                checkCurrentQuestionComplete();
-            }
-        }
-
-        // Обновление кнопок навигации
-        function updateButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            prevBtn.style.display = currentQuestion > 1 ? 'inline-flex' : 'none';
-            
-            if (currentQuestion === totalQuestions) {
-                nextBtn.innerHTML = '<i class="fas fa-check"></i> Завершить опрос';
-            } else {
-                nextBtn.innerHTML = 'Далее <i class="fas fa-arrow-right"></i>';
-            }
-        }
-
-        // Сохранение ответа на текущий вопрос
-        function saveCurrentResponse() {
-            const currentSection = document.querySelector(`.question-section[data-question="${currentQuestion}"]`);
-            
-            // Для обычных input полей
-            const inputFields = currentSection.querySelectorAll('.input-field');
-            inputFields.forEach(input => {
-                if (input.value.trim()) {
-                    responses[input.name] = input.value.trim();
-                }
-            });
-            
-            // Для radio кнопок
-            const radioInputs = currentSection.querySelectorAll('input[type="radio"]:checked');
-            radioInputs.forEach(input => {
-                responses[input.name] = input.value;
-            });
-            
-            // Для checkbox
-            const checkboxInputs = currentSection.querySelectorAll('input[type="checkbox"]');
-            const checkboxValues = {};
-            checkboxInputs.forEach(input => {
-                if (!checkboxValues[input.name]) {
-                    checkboxValues[input.name] = [];
-                }
-                if (input.checked) {
-                    checkboxValues[input.name].push(input.value);
-                }
-            });
-            Object.assign(responses, checkboxValues);
-            
-            // Для текстовых полей
-            const textInputs = currentSection.querySelectorAll('textarea');
-            textInputs.forEach(input => {
-                if (input.value.trim()) {
-                    responses[input.name] = input.value.trim();
-                }
-            });
-        }
-
-        // Проверка завершенности текущего вопроса
-        function checkCurrentQuestionComplete() {
-            const currentSection = document.querySelector(`.question-section[data-question="${currentQuestion}"]`);
-            const nextBtn = document.getElementById('nextBtn');
-            
-            let isComplete = false;
-            
-            // Для первого вопроса с контактной информацией
-            if (currentQuestion === 1) {
-                const fullName = currentSection.querySelector('#fullName').value.trim();
-                const phone = currentSection.querySelector('#phone').value.trim();
-                isComplete = fullName.length > 0 && phone.length > 0;
-            }
-            // Для вопроса с информацией об автомобиле
-            else if (currentQuestion === 4) {
-                const carBrand = currentSection.querySelector('#carBrand').value.trim();
-                const carModel = currentSection.querySelector('#carModel').value.trim();
-                isComplete = carBrand.length > 0 && carModel.length > 0;
-            }
-            // Проверяем radio кнопки
-            else {
-                const radioGroups = currentSection.querySelectorAll('input[type="radio"]');
-                if (radioGroups.length > 0) {
-                    const groupNames = [...new Set(Array.from(radioGroups).map(input => input.name))];
-                    isComplete = groupNames.every(name => 
-                        currentSection.querySelector(`input[name="${name}"]:checked`)
-                    );
-                }
-                
-                // Проверяем checkbox (хотя бы один должен быть выбран)
-                const checkboxGroups = currentSection.querySelectorAll('input[type="checkbox"]');
-                if (checkboxGroups.length > 0 && radioGroups.length === 0) {
-                    isComplete = Array.from(checkboxGroups).some(checkbox => checkbox.checked);
-                }
-                
-                // Для текстовых полей проверяем наличие текста
-                const textInputs = currentSection.querySelectorAll('textarea');
-                if (textInputs.length > 0 && radioGroups.length === 0 && checkboxGroups.length === 0) {
-                    isComplete = Array.from(textInputs).some(input => input.value.trim().length > 0);
-                }
-            }
-            
-            nextBtn.disabled = !isComplete;
-        }
-
-        // Отправка опроса
-        function submitSurvey() {
-            saveCurrentResponse();
-            
-            // Скрываем последний вопрос
-            document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
-            
-            // Показываем результаты
-            document.querySelector('.results-section').classList.add('active');
-            
-            // Скрываем кнопки навигации
-            document.querySelector('.navigation-buttons').style.display = 'none';
-            
-            // Скрываем прогресс-бар
-            document.querySelector('.progress-container').style.display = 'none';
-            
-            // Отправляем данные
-            console.log('Результаты опроса:', responses);
-            
-            // Подготавливаем данные для отправки
-            const surveyData = {
-                timestamp: new Date().toISOString(),
-                responses: responses,
-                userAgent: navigator.userAgent,
-                referrer: document.referrer
-            };
-            
-            // Сохраняем локально
-            localStorage.setItem('exzy_survey_responses', JSON.stringify(surveyData));
-            
-            // Отправляем на сервер
-            sendSurveyData(responses);
-            
-            // Аналитика
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'survey_completed', {
-                    event_category: 'engagement',
-                    event_label: 'exzy_auto_survey'
-                });
-            }
-        }
-
-        // Копирование промокода
-        function copyDiscountCode() {
-            navigator.clipboard.writeText('SURVEY15').then(() => {
-                const button = event.target.closest('.btn');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
-                button.style.background = 'var(--green-success)';
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '';
-                }, 2000);
-            });
-        }
-
-        // Социальные сети
-        function shareToVK() {
-            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
-            const url = window.location.href;
-            window.open(`https://vk.com/share.php?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        function shareToTelegram() {
-            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
-            window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        function shareToWhatsApp() {
-            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
-            window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + window.location.href)}`, '_blank');
-        }
-
-        // Форматирование телефона
-        function formatPhoneNumber(input) {
-            let value = input.value.replace(/\D/g, '');
-            let formattedValue = '';
-            
-            if (value.length > 0) {
-                if (value[0] === '7') {
-                    formattedValue = '+7';
-                    value = value.substring(1);
-                } else if (value[0] === '8') {
-                    formattedValue = '+7';
-                    value = value.substring(1);
-                } else {
-                    formattedValue = '+7';
-                }
-            }
-            
-            if (value.length > 0) {
-                formattedValue += ' (' + value.substring(0, 3);
-            }
-            if (value.length >= 4) {
-                formattedValue += ') ' + value.substring(3, 6);
-            }
-            if (value.length >= 7) {
-                formattedValue += '-' + value.substring(6, 8);
-            }
-            if (value.length >= 9) {
-                formattedValue += '-' + value.substring(8, 10);
-            }
-            
-            input.value = formattedValue;
-        }
-
-        // Инициализация
-        document.addEventListener('DOMContentLoaded', () => {
-            updateProgress();
-            
-            // Добавляем обработчики событий для всех опций
-            document.querySelectorAll('.option-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    const input = card.querySelector('input');
-                    
-                    if (input.type === 'radio') {
-                        // Убираем выделение с других опций той же группы
-                        document.querySelectorAll(`input[name="${input.name}"]`).forEach(radio => {
-                            radio.closest('.option-card').classList.remove('selected');
-                        });
-                        
-                        input.checked = true;
-                        card.classList.add('selected');
-                    } else if (input.type === 'checkbox') {
-                        input.checked = !input.checked;
-                        card.classList.toggle('selected', input.checked);
-                    }
-                    
-                    checkCurrentQuestionComplete();
-                });
-            });
-
-            // Обработчики для time slots
-            document.querySelectorAll('.time-slot').forEach(slot => {
-                slot.addEventListener('click', () => {
-                    const input = slot.querySelector('input');
-                    input.checked = !input.checked;
-                    slot.classList.toggle('selected', input.checked);
-                    checkCurrentQuestionComplete();
-                });
-            });
-            
-            // Обработчик для текстовых полей
-            document.querySelectorAll('textarea, .input-field').forEach(input => {
-                input.addEventListener('input', checkCurrentQuestionComplete);
-            });
-            
-            // Форматирование телефона
-            const phoneInput = document.querySelector('#phone');
-            if (phoneInput) {
-                phoneInput.addEventListener('input', () => formatPhoneNumber(phoneInput));
-            }
-            
-            // Начальная проверка
-            checkCurrentQuestionComplete();
-        });
-
-        // Отправка данных на сервер
-        async function sendSurveyData(data) {
-            try {
-                // Отправляем на ваш сервер с ботом через Cloudflare туннель
-                const response = await fetch('https://liver-scores-north-protection.trycloudflare.com/survey', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    console.log('Данные успешно отправлены в Telegram!');
-                } else {
-                    console.error('Ошибка при отправке данных');
-                    // Если не удалось отправить, можно попробовать еще раз или сохранить для последующей отправки
-                }
-            } catch (error) {
-                console.error('Ошибка:', error);
-                // Сохраняем для последующей отправки если сервер недоступен
-                const failedSubmissions = JSON.parse(localStorage.getItem('exzy_failed_submissions') || '[]');
-                failedSubmissions.push({
-                    data: data,
-                    timestamp: new Date().toISOString()
-                });
-                localStorage.setItem('exzy_failed_submissions', JSON.stringify(failedSubmissions));
-            }
-        }
-    </script>
-</body>
-</html>
 
             <!-- Вопрос 2: Опыт с EXZY Auto -->
             <div class="question-section" data-question="2">
@@ -2116,3 +1505,828 @@
                         </div>
                     </label>
                 </div>
+            </div>
+
+            <!-- Вопрос 16: Программы лояльности -->
+            <div class="question-section" data-question="16">
+                <h2 class="question-title">
+                    <span class="question-number">16</span>
+                    <span>Какой тип программы лояльности вам интереснее?</span>
+                </h2>
+                <div class="question-options">
+                    <label class="option-card">
+                        <input type="radio" name="loyalty_type" value="cashback">
+                        <div class="option-content">
+                            <div class="option-icon">💳</div>
+                            <div class="option-text">
+                                <div class="option-title">Кэшбэк</div>
+                                <div class="option-description">Возврат % от покупки на счет</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="loyalty_type" value="points">
+                        <div class="option-content">
+                            <div class="option-icon">🏆</div>
+                            <div class="option-text">
+                                <div class="option-title">Накопительные баллы</div>
+                                <div class="option-description">Баллы на будущие покупки</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="loyalty_type" value="discounts">
+                        <div class="option-content">
+                            <div class="option-icon">🏷️</div>
+                            <div class="option-text">
+                                <div class="option-title">Прогрессивные скидки</div>
+                                <div class="option-description">Чем больше покупаешь, тем больше скидка</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="loyalty_type" value="not_interested">
+                        <div class="option-content">
+                            <div class="option-icon">🤷</div>
+                            <div class="option-text">
+                                <div class="option-title">Не интересно</div>
+                                <div class="option-description">Главное - низкая цена сразу</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Вопрос 17: Мобильное приложение -->
+            <div class="question-section" data-question="17">
+                <h2 class="question-title">
+                    <span class="question-number">17</span>
+                    <span>Какие функции должны быть в идеальном приложении?</span>
+                </h2>
+                <div class="question-options">
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="vin_scanner">
+                        <div class="option-content">
+                            <div class="option-icon">📷</div>
+                            <div class="option-text">
+                                <div class="option-title">Сканер VIN-кода</div>
+                                <div class="option-description">Наводим камеру и получаем запчасти</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="ai_consultation">
+                        <div class="option-content">
+                            <div class="option-icon">🤖</div>
+                            <div class="option-text">
+                                <div class="option-title">ИИ-консультант</div>
+                                <div class="option-description">Умный помощник 24/7</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="maintenance_reminder">
+                        <div class="option-content">
+                            <div class="option-icon">🔔</div>
+                            <div class="option-text">
+                                <div class="option-title">Напоминания о ТО</div>
+                                <div class="option-description">Когда менять масло, фильтры</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="price_comparison">
+                        <div class="option-content">
+                            <div class="option-icon">📊</div>
+                            <div class="option-text">
+                                <div class="option-title">Сравнение цен</div>
+                                <div class="option-description">Все поставщики в одном месте</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="photo_search">
+                        <div class="option-content">
+                            <div class="option-icon">🔍</div>
+                            <div class="option-text">
+                                <div class="option-title">Поиск по фото детали</div>
+                                <div class="option-description">Сфотографировал - нашел</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="app_features" value="one_click_reorder">
+                        <div class="option-content">
+                            <div class="option-icon">🔄</div>
+                            <div class="option-text">
+                                <div class="option-title">Повторный заказ в 1 клик</div>
+                                <div class="option-description">История и быстрый перезаказ</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Вопрос 18: Готовность стать бета-тестером -->
+            <div class="question-section" data-question="18">
+                <h2 class="question-title">
+                    <span class="question-number">18</span>
+                    <span>Хотите первыми протестировать наше приложение?</span>
+                </h2>
+                <div class="question-options">
+                    <label class="option-card">
+                        <input type="radio" name="beta_tester" value="yes_active">
+                        <div class="option-content">
+                            <div class="option-icon">🚀</div>
+                            <div class="option-text">
+                                <div class="option-title">Да, буду активным тестером</div>
+                                <div class="option-description">Готов давать обратную связь</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="beta_tester" value="yes_try">
+                        <div class="option-content">
+                            <div class="option-icon">👍</div>
+                            <div class="option-text">
+                                <div class="option-title">Да, попробую</div>
+                                <div class="option-description">Установлю и посмотрю</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="beta_tester" value="wait_release">
+                        <div class="option-content">
+                            <div class="option-icon">⏰</div>
+                            <div class="option-text">
+                                <div class="option-title">Подожду релиза</div>
+                                <div class="option-description">Предпочитаю готовый продукт</div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="beta_tester" value="not_interested">
+                        <div class="option-content">
+                            <div class="option-icon">📵</div>
+                            <div class="option-text">
+                                <div class="option-title">Не интересно</div>
+                                <div class="option-description">Не планирую использовать</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Вопрос 19: Обратная связь -->
+            <div class="question-section" data-question="19">
+                <h2 class="question-title">
+                    <span class="question-number">19</span>
+                    <span>Ваши пожелания и предложения</span>
+                </h2>
+                <textarea class="text-input" name="feedback" placeholder="Расскажите нам:
+• Что должно быть в идеальном сервисе автозапчастей?
+• Какие проблемы нужно решить в первую очередь?
+• Что вам нравится/не нравится в EXZY Auto (если пользовались)?
+• Какие автомобильные форумы или группы вы читаете?
+• Любые другие идеи и предложения..."></textarea>
+            </div>
+
+            <!-- Результаты -->
+            <div class="results-section">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2 class="results-title">Спасибо за участие в опросе!</h2>
+                <p class="results-text">
+                    Ваше мнение очень важно для нас. Мы обязательно учтем все пожелания при создании нового сервиса и мобильного приложения EXZY Auto.
+                </p>
+                
+                <div class="discount-code">
+                    <div class="discount-title">Ваша персональная скидка</div>
+                    <div class="discount-value">SURVEY15</div>
+                    <div class="discount-description">
+                        Скидка 15% на первый заказ в EXZY Auto
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="copyDiscountCode()">
+                    <i class="fas fa-copy"></i>
+                    Скопировать промокод
+                </button>
+
+                <div class="social-share">
+                    <button class="share-btn share-vk" onclick="shareToVK()">
+                        <i class="fab fa-vk"></i>
+                    </button>
+                    <button class="share-btn share-telegram" onclick="shareToTelegram()">
+                        <i class="fab fa-telegram"></i>
+                    </button>
+                    <button class="share-btn share-whatsapp" onclick="shareToWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" style="display: none;">
+                    <i class="fas fa-arrow-left"></i>
+                    Назад
+                </button>
+                <div></div>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>
+                    Далее
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-title">Остались вопросы? Свяжитесь с нами!</div>
+            <div class="contact-details">
+                <a href="tel:+79937490916" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    +7 (993) 749-09-16
+                </a>
+                <a href="https://vk.com/exzy_35" class="contact-item" target="_blank">
+                    <i class="fab fa-vk"></i>
+                    vk.com/exzy_35
+                </a>
+                <a href="mailto:info@exzyauto.ru" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    info@exzyauto.ru
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 19;
+        let responses = {};
+        let skipServiceRating = false;
+
+        // Обновление прогресса
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('currentQuestionNumber').textContent = currentQuestion;
+            document.getElementById('totalQuestionsNumber').textContent = totalQuestions;
+            document.getElementById('progressPercentage').textContent = Math.round(progress) + '%';
+        }
+
+        // Автоскролл к началу вопроса на мобильных
+        function scrollToTop() {
+            if (window.innerWidth <= 768) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Переход к следующему вопросу
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                saveCurrentResponse();
+                
+                // Проверяем, нужно ли пропустить вопрос об оценке сервиса
+                if (currentQuestion === 2) {
+                    const exzyExperience = responses.exzy_experience;
+                    if (exzyExperience === 'heard_about' || exzyExperience === 'first_time') {
+                        skipServiceRating = true;
+                    }
+                }
+                
+                // Скрываем текущий вопрос
+                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
+                
+                currentQuestion++;
+                
+                // Пропускаем вопрос об оценке сервиса если нужно
+                if (currentQuestion === 3 && skipServiceRating) {
+                    currentQuestion++;
+                }
+                
+                // Показываем следующий вопрос
+                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.add('active');
+                
+                updateProgress();
+                updateButtons();
+                scrollToTop();
+                
+                // Сбрасываем состояние кнопки "Далее"
+                checkCurrentQuestionComplete();
+            } else {
+                submitSurvey();
+            }
+        }
+
+        // Переход к предыдущему вопросу
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
+                
+                currentQuestion--;
+                
+                // Пропускаем вопрос об оценке сервиса при возврате назад
+                if (currentQuestion === 3 && skipServiceRating) {
+                    currentQuestion--;
+                }
+                
+                document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.add('active');
+                
+                updateProgress();
+                updateButtons();
+                scrollToTop();
+                checkCurrentQuestionComplete();
+            }
+        }
+
+        // Обновление кнопок навигации
+        function updateButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.style.display = currentQuestion > 1 ? 'inline-flex' : 'none';
+            
+            if (currentQuestion === totalQuestions) {
+                nextBtn.innerHTML = '<i class="fas fa-check"></i> Завершить опрос';
+            } else {
+                nextBtn.innerHTML = 'Далее <i class="fas fa-arrow-right"></i>';
+            }
+        }
+
+        // Сохранение ответа на текущий вопрос
+        function saveCurrentResponse() {
+            const currentSection = document.querySelector(`.question-section[data-question="${currentQuestion}"]`);
+            
+            // Для обычных input полей
+            const inputFields = currentSection.querySelectorAll('.input-field');
+            inputFields.forEach(input => {
+                if (input.value.trim()) {
+                    responses[input.name] = input.value.trim();
+                }
+            });
+            
+            // Для radio кнопок
+            const radioInputs = currentSection.querySelectorAll('input[type="radio"]:checked');
+            radioInputs.forEach(input => {
+                responses[input.name] = input.value;
+            });
+            
+            // Для checkbox
+            const checkboxInputs = currentSection.querySelectorAll('input[type="checkbox"]');
+            const checkboxValues = {};
+            checkboxInputs.forEach(input => {
+                if (!checkboxValues[input.name]) {
+                    checkboxValues[input.name] = [];
+                }
+                if (input.checked) {
+                    checkboxValues[input.name].push(input.value);
+                }
+            });
+            Object.assign(responses, checkboxValues);
+            
+            // Для текстовых полей
+            const textInputs = currentSection.querySelectorAll('textarea');
+            textInputs.forEach(input => {
+                if (input.value.trim()) {
+                    responses[input.name] = input.value.trim();
+                }
+            });
+        }
+
+        // Проверка завершенности текущего вопроса
+        function checkCurrentQuestionComplete() {
+            const currentSection = document.querySelector(`.question-section[data-question="${currentQuestion}"]`);
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let isComplete = false;
+            
+            // Для первого вопроса с контактной информацией
+            if (currentQuestion === 1) {
+                const fullName = currentSection.querySelector('#fullName').value.trim();
+                const phone = currentSection.querySelector('#phone').value.trim();
+                isComplete = fullName.length > 0 && phone.length > 0;
+            }
+            // Для вопроса с информацией об автомобиле
+            else if (currentQuestion === 4) {
+                const carBrand = currentSection.querySelector('#carBrand').value.trim();
+                const carModel = currentSection.querySelector('#carModel').value.trim();
+                isComplete = carBrand.length > 0 && carModel.length > 0;
+            }
+            // Проверяем radio кнопки
+            else {
+                const radioGroups = currentSection.querySelectorAll('input[type="radio"]');
+                if (radioGroups.length > 0) {
+                    const groupNames = [...new Set(Array.from(radioGroups).map(input => input.name))];
+                    isComplete = groupNames.every(name => 
+                        currentSection.querySelector(`input[name="${name}"]:checked`)
+                    );
+                }
+                
+                // Проверяем checkbox (хотя бы один должен быть выбран)
+                const checkboxGroups = currentSection.querySelectorAll('input[type="checkbox"]');
+                if (checkboxGroups.length > 0 && radioGroups.length === 0) {
+                    isComplete = Array.from(checkboxGroups).some(checkbox => checkbox.checked);
+                }
+                
+                // Для текстовых полей проверяем наличие текста
+                const textInputs = currentSection.querySelectorAll('textarea');
+                if (textInputs.length > 0 && radioGroups.length === 0 && checkboxGroups.length === 0) {
+                    isComplete = Array.from(textInputs).some(input => input.value.trim().length > 0);
+                }
+            }
+            
+            nextBtn.disabled = !isComplete;
+        }
+
+        // Отправка опроса
+        function submitSurvey() {
+            saveCurrentResponse();
+            
+            // Скрываем последний вопрос
+            document.querySelector(`.question-section[data-question="${currentQuestion}"]`).classList.remove('active');
+            
+            // Показываем результаты
+            document.querySelector('.results-section').classList.add('active');
+            
+            // Скрываем кнопки навигации
+            document.querySelector('.navigation-buttons').style.display = 'none';
+            
+            // Скрываем прогресс-бар
+            document.querySelector('.progress-container').style.display = 'none';
+            
+            // Отправляем данные
+            console.log('Результаты опроса:', responses);
+            
+            // Подготавливаем данные для отправки
+            const surveyData = {
+                timestamp: new Date().toISOString(),
+                responses: responses,
+                userAgent: navigator.userAgent,
+                referrer: document.referrer
+            };
+            
+            // Сохраняем локально
+            localStorage.setItem('exzy_survey_responses', JSON.stringify(surveyData));
+            
+            // Отправляем на сервер
+            sendSurveyData(responses);
+            
+            // Аналитика
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'survey_completed', {
+                    event_category: 'engagement',
+                    event_label: 'exzy_auto_survey'
+                });
+            }
+        }
+
+        // Копирование промокода
+        function copyDiscountCode() {
+            navigator.clipboard.writeText('SURVEY15').then(() => {
+                const button = event.target.closest('.btn');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                button.style.background = 'var(--green-success)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+
+        // Социальные сети
+        function shareToVK() {
+            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
+            const url = window.location.href;
+            window.open(`https://vk.com/share.php?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function shareToTelegram() {
+            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
+            window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function shareToWhatsApp() {
+            const text = 'Прошел опрос EXZY Auto и получил скидку 15%! Помогаю создать лучший сервис автозапчастей в Череповце 🚗';
+            window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + window.location.href)}`, '_blank');
+        }
+
+        // Форматирование телефона
+        function formatPhoneNumber(input) {
+            let value = input.value.replace(/\D/g, '');
+            let formattedValue = '';
+            
+            if (value.length > 0) {
+                if (value[0] === '7') {
+                    formattedValue = '+7';
+                    value = value.substring(1);
+                } else if (value[0] === '8') {
+                    formattedValue = '+7';
+                    value = value.substring(1);
+                } else {
+                    formattedValue = '+7';
+                }
+            }
+            
+            if (value.length > 0) {
+                formattedValue += ' (' + value.substring(0, 3);
+            }
+            if (value.length >= 4) {
+                formattedValue += ') ' + value.substring(3, 6);
+            }
+            if (value.length >= 7) {
+                formattedValue += '-' + value.substring(6, 8);
+            }
+            if (value.length >= 9) {
+                formattedValue += '-' + value.substring(8, 10);
+            }
+            
+            input.value = formattedValue;
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            
+            // Добавляем обработчики событий для всех опций
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const input = card.querySelector('input');
+                    
+                    if (input.type === 'radio') {
+                        // Убираем выделение с других опций той же группы
+                        document.querySelectorAll(`input[name="${input.name}"]`).forEach(radio => {
+                            radio.closest('.option-card').classList.remove('selected');
+                        });
+                        
+                        input.checked = true;
+                        card.classList.add('selected');
+                    } else if (input.type === 'checkbox') {
+                        input.checked = !input.checked;
+                        card.classList.toggle('selected', input.checked);
+                    }
+                    
+                    checkCurrentQuestionComplete();
+                });
+            });
+
+            // Обработчики для time slots
+            document.querySelectorAll('.time-slot').forEach(slot => {
+                slot.addEventListener('click', () => {
+                    const input = slot.querySelector('input');
+                    input.checked = !input.checked;
+                    slot.classList.toggle('selected', input.checked);
+                    checkCurrentQuestionComplete();
+                });
+            });
+            
+            // Обработчик для текстовых полей
+            document.querySelectorAll('textarea, .input-field').forEach(input => {
+                input.addEventListener('input', checkCurrentQuestionComplete);
+            });
+            
+            // Форматирование телефона
+            const phoneInput = document.querySelector('#phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', () => formatPhoneNumber(phoneInput));
+            }
+            
+            // Начальная проверка
+            checkCurrentQuestionComplete();
+        });
+
+        // Словари для перевода ответов на русский
+        const translationMaps = {
+            exzy_experience: {
+                regular_customer: 'Постоянный клиент',
+                sometimes: 'Заказывал несколько раз',
+                once: 'Заказывал один раз',
+                heard_about: 'Слышал о магазине',
+                first_time: 'Впервые слышу'
+            },
+            service_rating: {
+                excellent: 'Отлично',
+                good: 'Хорошо',
+                average: 'Удовлетворительно',
+                poor: 'Плохо'
+            },
+            current_services: {
+                exist: 'Exist.ru',
+                autodoc: 'Autodoc.ru',
+                emex: 'Emex.ru',
+                local_stores: 'Местные магазины',
+                avito: 'Авито/Юла',
+                other: 'Другие сервисы'
+            },
+            service_dislikes: {
+                complex_interface: 'Сложный интерфейс',
+                poor_search: 'Плохой поиск',
+                hidden_fees: 'Скрытые платежи',
+                no_support: 'Нет поддержки',
+                slow_refunds: 'Долгие возвраты',
+                no_trust: 'Нет доверия'
+            },
+            frequency: {
+                often: 'Часто (несколько раз в месяц)',
+                sometimes: 'Иногда (несколько раз в год)',
+                rarely: 'Редко (только при поломках)',
+                never: 'Не покупаю сам'
+            },
+            can_find_article: {
+                expert: 'Да, без проблем',
+                sometimes: 'Иногда получается',
+                with_help: 'Только с помощью',
+                no: 'Нет, не умею'
+            },
+            problems: {
+                wrong_parts: 'Ошибки в подборе',
+                long_delivery: 'Долгая доставка',
+                high_prices: 'Высокие цены',
+                fake_parts: 'Подделки',
+                bad_consultation: 'Плохие консультации',
+                no_warranty: 'Проблемы с гарантией'
+            },
+            pay_for_original: {
+                always: 'Да, всегда',
+                important_parts: 'Для важных деталей',
+                depends_price: 'Зависит от разницы в цене',
+                no: 'Нет, беру аналоги'
+            },
+            priorities: {
+                price: 'Низкая цена',
+                speed: 'Быстрая доставка',
+                quality: 'Качество и оригинальность',
+                service: 'Качество сервиса'
+            },
+            switch_reasons: {
+                better_prices: 'Лучшие цены',
+                faster_delivery: 'Быстрее доставка',
+                better_service: 'Лучший сервис',
+                mobile_app: 'Удобное приложение',
+                loyalty_program: 'Программа лояльности',
+                nothing: 'Ничего'
+            },
+            delivery_preference: {
+                pickup: 'Самовывоз',
+                home_delivery: 'Доставка домой',
+                work_delivery: 'Доставка на работу',
+                pickup_point: 'Пункт выдачи'
+            },
+            delivery_time: {
+                morning: 'Утро (8:00-12:00)',
+                afternoon: 'День (12:00-17:00)',
+                evening: 'Вечер (17:00-21:00)',
+                weekend: 'Выходные'
+            },
+            distance_willing: {
+                '5km': 'До 5 км',
+                '10km': 'До 10 км',
+                '20km': 'До 20 км',
+                'any': 'Любое расстояние'
+            },
+            loyalty_type: {
+                cashback: 'Кэшбэк',
+                points: 'Накопительные баллы',
+                discounts: 'Прогрессивные скидки',
+                not_interested: 'Не интересно'
+            },
+            app_features: {
+                vin_scanner: 'Сканер VIN-кода',
+                ai_consultation: 'ИИ-консультант',
+                maintenance_reminder: 'Напоминания о ТО',
+                price_comparison: 'Сравнение цен',
+                photo_search: 'Поиск по фото детали',
+                one_click_reorder: 'Повторный заказ в 1 клик'
+            },
+            beta_tester: {
+                yes_active: 'Да, буду активным тестером',
+                yes_try: 'Да, попробую',
+                wait_release: 'Подожду релиза',
+                not_interested: 'Не интересно'
+            }
+        };
+
+        // Вопросы на русском языке
+        const questionLabels = {
+            fullName: 'Имя и фамилия',
+            phone: 'Телефон',
+            email: 'Email',
+            newsletter: 'Подписка на новости',
+            exzy_experience: 'Знакомство с EXZY Auto',
+            service_rating: 'Оценка сервиса',
+            carBrand: 'Марка автомобиля',
+            carModel: 'Модель автомобиля',
+            carYear: 'Год выпуска',
+            current_services: 'Используемые сервисы',
+            service_dislikes: 'Что не нравится в существующих сервисах',
+            frequency: 'Частота покупки автозапчастей',
+            can_find_article: 'Умение определять артикул',
+            problems: 'Проблемы при покупке',
+            pay_for_original: 'Готовность переплатить за оригинал',
+            priorities: 'Важные критерии при выборе поставщика',
+            switch_reasons: 'Причины для смены поставщика',
+            delivery_preference: 'Предпочтения по доставке',
+            delivery_time: 'Удобное время доставки',
+            distance_willing: 'Готовность ехать за запчастями',
+            loyalty_type: 'Предпочитаемая программа лояльности',
+            app_features: 'Желаемые функции в приложении',
+            beta_tester: 'Готовность стать бета-тестером',
+            feedback: 'Пожелания и предложения'
+        };
+
+        // Функция перевода ответов
+        function translateResponse(key, value) {
+            if (translationMaps[key]) {
+                if (Array.isArray(value)) {
+                    return value.map(v => translationMaps[key][v] || v).join(', ');
+                }
+                return translationMaps[key][value] || value;
+            }
+            
+            // Для newsletter
+            if (key === 'newsletter' && Array.isArray(value)) {
+                return value.includes('on') ? 'Да' : 'Нет';
+            }
+            
+            return value;
+        }
+
+        // Формирование читаемого отчета
+        function formatReadableReport(data) {
+            let report = '📋 РЕЗУЛЬТАТЫ ОПРОСА EXZY AUTO\\n\\n';
+            report += '👤 КОНТАКТНАЯ ИНФОРМАЦИЯ\\n';
+            report += '━━━━━━━━━━━━━━━━━━━━━━\\n';
+            
+            // Контактные данные
+            ['fullName', 'phone', 'email', 'newsletter'].forEach(key => {
+                if (data[key] !== undefined) {
+                    report += `${questionLabels[key]}: ${translateResponse(key, data[key])}\\n`;
+                }
+            });
+            
+            report += '\\n🚗 ИНФОРМАЦИЯ ОБ АВТОМОБИЛЕ\\n';
+            report += '━━━━━━━━━━━━━━━━━━━━━━\\n';
+            
+            // Автомобиль
+            ['carBrand', 'carModel', 'carYear'].forEach(key => {
+                if (data[key] !== undefined) {
+                    report += `${questionLabels[key]}: ${data[key]}\\n`;
+                }
+            });
+            
+            report += '\\n📊 ОТВЕТЫ НА ВОПРОСЫ\\n';
+            report += '━━━━━━━━━━━━━━━━━━━━━━\\n';
+            
+            // Остальные вопросы
+            Object.keys(data).forEach(key => {
+                if (!['fullName', 'phone', 'email', 'newsletter', 'carBrand', 'carModel', 'carYear'].includes(key)) {
+                    const label = questionLabels[key] || key;
+                    const value = translateResponse(key, data[key]);
+                    
+                    if (key === 'feedback' && value) {
+                        report += `\\n💭 ${label}:\\n${value}\\n`;
+                    } else if (value) {
+                        report += `\\n❓ ${label}:\\n✅ ${value}\\n`;
+                    }
+                }
+            });
+            
+            report += '\\n━━━━━━━━━━━━━━━━━━━━━━\\n';
+            report += `📅 Дата заполнения: ${new Date().toLocaleString('ru-RU')}`;
+            
+            return report;
+        }
+
+        // Отправка данных на сервер
+        async function sendSurveyData(data) {
+            try {
+                // Отправляем на ваш сервер с ботом через Cloudflare туннель
+                const response = await fetch('https://liver-scores-north-protection.trycloudflare.com/survey', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    console.log('Данные успешно отправлены в Telegram!');
+                } else {
+                    console.error('Ошибка при отправке данных');
+                    // Если не удалось отправить, можно попробовать еще раз или сохранить для последующей отправки
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                // Сохраняем для последующей отправки если сервер недоступен
+                const failedSubmissions = JSON.parse(localStorage.getItem('exzy_failed_submissions') || '[]');
+                failedSubmissions.push({
+                    data: data,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('exzy_failed_submissions', JSON.stringify(failedSubmissions));
+            }
+        }
+    </script>
+</body>
+</html>
